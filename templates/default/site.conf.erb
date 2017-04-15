@@ -22,6 +22,10 @@
     Allow from all
   </Directory>
 
+
   LogLevel warn
+  ErrorLog  <%= node['aws_elb_webserver']['access_logs'] %>error.log
+  LogFormat "%h %l %u %t \"%r\" %>s %b" common
+  CustomLog <%= node['aws_elb_webserver']['access_logs'] %>access.log common
 
 </VirtualHost>

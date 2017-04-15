@@ -1,5 +1,13 @@
 include_recipe 'aws_elb_webserver::create_user'
 
+directory node['aws_elb_webserver']['access_logs'] do
+  owner node['aws_elb_webserver']['user']
+  group node['aws_elb_webserver']['group']
+  mode 00755
+  recursive true
+  action :create
+end
+
 httpd_service 'default' do
   run_group node['aws_elb_webserver']['group']
   run_user node['aws_elb_webserver']['user']
