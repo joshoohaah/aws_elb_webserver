@@ -1,4 +1,4 @@
-<VirtualHost *:80>
+<VirtualHost *:<%= node['aws_elb_webserver']['port'] %>>
   DocumentRoot <%= node['aws_elb_webserver']['docroot_dir'] %>
 
   <Directory <%= node['aws_elb_webserver']['docroot_dir'] %>>

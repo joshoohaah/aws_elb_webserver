@@ -8,3 +8,4 @@ long_description 'Installs/Configures aws_elb_webserver'
 version          '0.1.0'
 
 depends 'httpd'
+depends 'chef_nginx'
