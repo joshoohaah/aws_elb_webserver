@@ -42,7 +42,12 @@ platforms:
       image_id: ami-5e63d13e # ami from instructions
 
 suites:
-  - name: default
+  - name: default-httpd
+    run_list:
+      - recipe[aws_elb_webserver::default]
+      - recipe[aws_elb_webserver::configure_httpd]
+    attributes:
+  - name: default-httpd-1
     run_list:
       - recipe[aws_elb_webserver::default]
     attributes:
