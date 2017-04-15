@@ -1,0 +1,32 @@
+---
+driver:
+  name: vagrant
+  network:
+  - ["forwarded_port", {guest: 8001, host: 7070, auto_correct: true}]
+  - ["forwarded_port", {guest: 8081, host: 7071, auto_correct: true}]
+  - ["forwarded_port", {guest: 80, host: 7000, auto_correct: true}]
+  synced_folders:
+    - ["~/", "/vagrant", "create: true"]
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-7.1
+    driver_config:
+      box: bento/centos-7.1
+
+suites:
+  - name: default
+    data_bags_path: "../../data_bags"
+    run_list:
+      - recipe[ge_external_certs::default]
+      - recipe[dcar_nexus::default]
+      - recipe[dcar_nexus::deploy_nginx]
+    attributes:
+      authorization:
+        sudo:
+          users:
+            - gecloud
+            - root
+            - vagrant
