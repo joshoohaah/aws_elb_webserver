@@ -6,7 +6,7 @@ node.default['nginx']['user'] = node['aws_elb_webserver']['group']
 node.default['nginx']['group'] = node['aws_elb_webserver']['group']
 node.default['nginx']['port'] = node['aws_elb_webserver']['port']
 node.default['nginx']['disable_access_log'] = false
-node.default['nginx']['default_site_enabled'] = true # TODO change to false when custom is deployed
+node.default['nginx']['default_site_enabled'] = true # TODO: change to false when custom is deployed
 node.default['nginx']['default_root'] = node['aws_elb_webserver']['docroot_dir']
 
 include_recipe 'chef_nginx::default'
