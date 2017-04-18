@@ -1,6 +1,16 @@
 include_recipe 'aws_elb_webserver::create_user'
 
+# Creates the access logs directory
 directory node['aws_elb_webserver']['access_logs'] do
+  owner node['aws_elb_webserver']['user']
+  group node['aws_elb_webserver']['group']
+  mode 0o0755
+  recursive true
+  action :create
+end
+
+# Creates directory for website
+directory node['aws_elb_webserver']['docroot_dir'] do
   owner node['aws_elb_webserver']['user']
   group node['aws_elb_webserver']['group']
   mode 0o0755
