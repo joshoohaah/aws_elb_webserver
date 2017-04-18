@@ -1,8 +1,12 @@
 name             'aws_elb_webserver'
-maintainer       'GE Healthcare'
-maintainer_email 'josh.schneider@ge.com
-'
+maintainer       'Josh Schneider'
+maintainer_email 'josh.schneider@ge.com'
 license          'All rights reserved'
 description      'Installs/Configures aws_elb_webserver'
 long_description 'Installs/Configures aws_elb_webserver'
+issues_url       'https://github.com/joshoohaah/aws_elb_webserver/issues'
+source_url       'https://github.com/joshoohaah/aws_elb_webserver'
 version          '0.1.0'
+
+depends 'httpd'
+depends 'chef_nginx'
