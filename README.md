@@ -14,7 +14,7 @@ To run in `chef-client --local-mode` the following assumptions are made:
   1. chefdk software package installed
   1. `berks vendor` on this cookbook and put that output into your local chef repo cookbook folder  `cp -R berks-cookbooks/* ~/<your chef repo>/cookbooks`
      1. if you don't have a chef repo make one!  `chef generate <your chef repo>`
-  1. run the webserver/elb deployment example using `chef-client --local-mode aws-deploy.rb`
+  1. run the webserver/elb deployment example using `chef-client --local-mode aws_deploy.rb`
 ### using test-kitchen
    1. Locally
       1. set environment variable to point to correct kitchen file `export KITCHEN_YAML=.kitchen.yml`

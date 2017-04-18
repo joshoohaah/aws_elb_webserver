@@ -1,3 +1,5 @@
+# This recipe is for deploying the 'hello world' files for the default webpage
+
 directory "#{node['aws_elb_webserver']['docroot_dir']}/img" do
   recursive true
   action :create
