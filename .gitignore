@@ -19,3 +19,4 @@ berks-cookbooks/
 .kitchen/
 .kitchen.local.yml
 AWS_CREDS
+berks-cookbooks/
