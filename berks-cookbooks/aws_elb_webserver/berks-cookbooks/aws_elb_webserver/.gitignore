@@ -15,7 +15,7 @@ Berksfile.lock
 Gemfile.lock
 bin/*
 .bundle/*
-berks-cookbooks/
+
 .kitchen/
 .kitchen.local.yml
 AWS_CREDS
